@@ -14,6 +14,9 @@ import android.support.v4.content.Loader;
 import android.util.Log;
 import android.widget.RemoteViews;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import barqsoft.footballscores.DatabaseContract;
 import barqsoft.footballscores.MainActivity;
 import barqsoft.footballscores.R;
@@ -25,7 +28,7 @@ import barqsoft.footballscores.Utilies;
 
 public class FootballWidgetService extends IntentService implements LoaderManager.LoaderCallbacks<Cursor> {
     public static String LOG_TAG = FootballWidgetService.class.getSimpleName();
-    private static final String[] DB_COLUMNS = {
+    static final String[] DB_COLUMNS = {
             DatabaseContract.scores_table.DATE_COL,
             DatabaseContract.scores_table.HOME_COL,
             DatabaseContract.scores_table.AWAY_COL,
@@ -53,10 +56,8 @@ public class FootballWidgetService extends IntentService implements LoaderManage
         int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(this, FootballWidget.class));
         Uri dateUri = DatabaseContract.scores_table.buildScoreWithDate();
         Log.i(LOG_TAG, "dateUri: " + dateUri.toString());
-        String[] date = new String[1];
-        date[0] = "Date to be filled";//Utilies.getFragmentDate(0);
         //TODO: move to common constants for "date"
-        Cursor data = getContentResolver().query(dateUri, DB_COLUMNS, "date", date, null);
+        Cursor data = getContentResolver().query(dateUri, DB_COLUMNS, "date", new String[]{getToday()}, null);
 
         if (data == null) {
             return;
@@ -99,6 +100,10 @@ public class FootballWidgetService extends IntentService implements LoaderManage
             // Instruct the widget manager to update the widget
             appWidgetManager.updateAppWidget(appWidgetId, views);
         }
+    }
+
+    static String getToday() {
+        return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
     }
 
     @Override

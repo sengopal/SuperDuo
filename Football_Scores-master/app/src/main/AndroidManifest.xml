@@ -49,21 +49,20 @@
                 android:resource="@xml/football_app_widget_info" />
         </receiver>
 
-        <!--
+
         <receiver
-            android:name=".widget.DetailWidgetProvider"
-            android:label="@string/widget_detail_title">
+            android:name=".widget.FootballWidgetProvider"
+            android:label="@string/football_coll_widget_title">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="com.example.android.sunshine.app.ACTION_DATA_UPDATED" />
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/widget_info_detail" />
+                android:resource="@xml/football_coll_widget" />
         </receiver>
 
         <service
-            android:name=".widget.DetailWidgetRemoteViewsService"
+            android:name=".widget.FootballCollWidgetRemoteViewsService"
             android:exported="false"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
             -->
