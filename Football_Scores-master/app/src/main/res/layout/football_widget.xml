@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green13"
+    android:orientation="vertical"
+    android:padding="0dp"
+    android:contentDescription="@string/football_widget_desc">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:contentDescription="@string/football_widget_team_desc">
+
+        <TextView
+            android:id="@+id/home_team_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:contentDescription="@string/football_widget_home_team_text"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="2"
+            android:text=""
+            android:textColor="@color/material_blue_grey_800"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/away_team_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:contentDescription="@string/football_widget_away_team_text"
+            android:gravity="center"
+            android:lines="2"
+            android:textColor="@color/material_blue_grey_800"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/score_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:contentDescription="@string/football_widget_score_text"
+        android:gravity="center"
+        android:text="@string/empty_text_view"
+        android:textColor="@color/material_blue_grey_800"
+        android:textSize="20dp" />
+
+</LinearLayout>
