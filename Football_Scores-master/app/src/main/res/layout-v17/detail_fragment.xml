@@ -47,8 +47,7 @@
             android:paddingEnd="120dp"
             android:paddingLeft="120dp"
             android:paddingRight="120dp"
-            android:contentDescription="@string/detail_fragment_share_btn_desc"
-            tools:ignore="NewApi" />
+            android:contentDescription="@string/detail_fragment_share_btn_desc" />
     </FrameLayout>
 
 </LinearLayout>
