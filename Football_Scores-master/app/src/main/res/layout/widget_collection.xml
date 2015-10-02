@@ -34,7 +34,7 @@
             android:layout_height="match_parent"
             android:divider="@null"
             android:dividerHeight="0dp"
-            tools:listitem="@layout/widget_detail_list_item" />
+            tools:listitem="@layout/widget_collection_item" />
 
         <TextView
             android:id="@+id/widget_empty"
